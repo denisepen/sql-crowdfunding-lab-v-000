@@ -40,7 +40,7 @@ from users
 join pledges
 on users.id = pledges.user_id
 group by users.name
-order by pledges.amount
+order by SUM(pledges.amount) asc, users.name
 ;"
 end
 
